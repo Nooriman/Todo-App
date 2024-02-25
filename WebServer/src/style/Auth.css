@@ -1,0 +1,15 @@
+.SignInComponent, .SignUpComponent {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin: auto;
+    justify-content: space-between;
+}
+
+.SignInComponent {
+    height: 40%
+}
+
+.SignUpComponent {
+    height: 45%;
+}
