@@ -20,9 +20,9 @@ mongoose
     console.log("Connected to MongoDB");
     const adminDb = mongoose.connection.db.admin();
     const databaseList = await adminDb.listDatabases();
+    console.log("List of databases:", databaseList.databases);
     console.log("Connected to databases:", mongoose.connection.name);
 
-    console.log("List of databases:", databaseList.databases);
     app.listen(process.env.PORT, () =>
       console.log(`Server is running on: ${process.env.PORT}`)
     );
