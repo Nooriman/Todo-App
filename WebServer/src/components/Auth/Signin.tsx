@@ -12,7 +12,8 @@ import {
 import { ChangeEvent, useState } from "react";
 import HorizontalLineWithText from "../HorizontalLineWithText/HorizontalLineWithText";
 import "../../style/Auth.css";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 interface loginSchema {
   email: string;
@@ -24,18 +25,27 @@ type ChildProps = {
 };
 
 export default function Signin({ onButtonClick }: ChildProps) {
+  const navigate = useNavigate();
   const [userCred, setUserCred] = useState<loginSchema>({
     email: "",
     password: "",
   });
   const [showPassword, setShowPassword] = useState<boolean>(false);
 
-  const handleEmailOnChange = (e: ChangeEvent<HTMLInputElement>) => {
-    setUserCred({ ...userCred, email: e.target.value });
-  };
-
-  const handleSignIn = () => {
-    alert("handle Signin with AWS Cognito");
+  const handleSignIn = async () => {
+    console.log(userCred);
+    try {
+      const response = await axios.post(
+        "http://localhost:4000/api/login",
+        userCred
+      );
+      if (response.data.message === "Authentication successful") {
+        console.log("response", response);
+        navigate("/main");
+      }
+    } catch (error) {
+      console.log("err");
+    }
   };
 
   const handleGoogleLogin = () => {
@@ -54,13 +64,18 @@ export default function Signin({ onButtonClick }: ChildProps) {
         label="Email"
         value={userCred.email}
         size="small"
-        onChange={handleEmailOnChange}
+        onChange={(e: ChangeEvent<HTMLInputElement>) =>
+          setUserCred({ ...userCred, email: e.target.value })
+        }
       />
 
       <FormControl size="small" variant="outlined">
         <InputLabel>Password</InputLabel>
         <OutlinedInput
           type={showPassword ? "text" : "password"}
+          onChange={(e: ChangeEvent<HTMLInputElement>) =>
+            setUserCred({ ...userCred, password: e.target.value })
+          }
           endAdornment={
             <InputAdornment position="end">
               <IconButton
@@ -76,7 +91,7 @@ export default function Signin({ onButtonClick }: ChildProps) {
       </FormControl>
 
       <Button onClick={handleSignIn} variant="contained">
-        <Link to={"/main"}>Sign In</Link>
+        Sign In
       </Button>
       <HorizontalLineWithText text="or" />
       <Grid container spacing={2}>
