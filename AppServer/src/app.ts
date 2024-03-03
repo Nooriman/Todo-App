@@ -4,6 +4,7 @@ import bodyParser from "body-parser";
 import mongoose from "mongoose";
 import cors from 'cors';
 import todoRoute from "./routes/todo.routes";
+import authenticationRouter from './routes/authentication.routes';
 
 dotenv.config();
 
@@ -13,6 +14,7 @@ const MONGODB_URI = process.env.MONGODB_URI!;
 app.use(cors());
 app.use(express.json());
 app.use("/api", todoRoute);
+app.use("/api", authenticationRouter);
 
 mongoose
   .connect(MONGODB_URI)

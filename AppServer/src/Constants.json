@@ -1,0 +1,4 @@
+{
+    "login_success": "Authentication successful",
+    "login_failure": "Invalid email or password. Please try again."
+}
