@@ -42,63 +42,27 @@ export default function Auth() {
   };
 
   return (
-    <Grid container spacing={4} style={{ padding: "20px" }}>
+    <Grid container spacing={4} className="authentication_left_main">
       <Grid item xs={6}>
-        <div
-          style={{
-            backgroundColor: "black",
-            borderRadius: "2%",
-            border: "solidj1px #cdcdcd",
-            height: "90vh",
-            padding: "20px",
-          }}
-        >
-          <h1 style={{ color: "white", fontSize: "3rem" }}>
-            {content.appName}
-          </h1>
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "space-around",
-              alignItems: "center",
-              height: "80%",
-            }}
-          >
+        <div className="authentication_left_component">
+          <h1 className="authentication_left_title">{content.appName}</h1>
+          <div className="authentication_left_img">
             <img src={bgOne} alt="abstract-img" />
           </div>
         </div>
       </Grid>
       <Grid item xs={6}>
-        <div
-          style={{
-            borderRadius: "2%",
-            border: "solid 1px #cdcdcd",
-            padding: "20px",
-            display: "flex",
-            justifyContent: "center",
-            height: "90vh",
-            flexDirection: "column",
-          }}
-        >
+        <div className="auth_right_main">
           {!showSignIn && !showSignUp && !showCarousel && (
-            <div style={{ width: "70%", margin: "auto" }}>
-              <h1>Productive Mind</h1>
-              <p>
-                With only the feature you need, Organic Mind is customed for
-                individual seeking a stress-free way to stay focused on their
-                goals, projects, and tasks.
-              </p>
+            <div className="auth_right_component">
+              <h1>{content.auth_intro.title}</h1>
+              <p>{content.auth_intro.body}</p>
               <Button
-                style={{
-                  width: "100%",
-                  backgroundColor: "#fcba03",
-                  color: "black",
-                }}
-                className="bg-pri"
+                className="bg-pri auth_right_button"
                 onClick={() => handleSignIn("carousel")}
                 variant="contained"
               >
-                Get Started
+                {content.getStarted}
               </Button>
               <Button
                 style={{ width: "100% ", color: "darkgrey" }}

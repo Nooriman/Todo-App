@@ -22,7 +22,7 @@ mongoose
     console.log("Connected to MongoDB");
     const adminDb = mongoose.connection.db.admin();
     const databaseList = await adminDb.listDatabases();
-    console.log("List of databases:", databaseList.databases);
+    // console.log("List of databases:", databaseList.databases);
     console.log("Connected to databases:", mongoose.connection.name);
 
     app.listen(process.env.PORT, () =>

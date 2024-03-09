@@ -1,15 +1,61 @@
-.SignInComponent, .SignUpComponent {
-    display: flex;
-    flex-direction: column;
-    width: 50%;
+.authentication_left_main {
+  padding: 20px;
+}
+
+.authentication_left_component {
+  background-color: #000;
+  border-radius: 2%;
+  border: solid 1px #cdcdcd;
+  height: 90vh;
+  padding: 20px;
+}
+
+.authentication_left_title {
+  color: #fff;
+  font-size: 3rem;
+}
+
+.authentication_left_img {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 80%;
+}
+
+.auth_right_main {
+  border-radius: 2%;
+  border: solid 1px #cdcdcd;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  height: 90vh;
+  flex-direction: column;
+}
+
+.auth_right_component {
+    width: 70%;
     margin: auto;
-    justify-content: space-between;
+}
+
+.auth_right_button {
+    width: 100%;
+    background-color: #fcba03;
+    color: #000;
+}
+
+.SignInComponent,
+.SignUpComponent {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin: auto;
+  justify-content: space-between;
 }
 
 .SignInComponent {
-    height: 40%
+  height: 40%;
 }
 
 .SignUpComponent {
-    height: 45%;
+  height: 45%;
 }

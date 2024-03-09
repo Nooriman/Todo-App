@@ -8,12 +8,14 @@ import {
   InputLabel,
   OutlinedInput,
   TextField,
+  Typography,
 } from "@mui/material";
 import { ChangeEvent, useState } from "react";
 import HorizontalLineWithText from "../HorizontalLineWithText/HorizontalLineWithText";
 import "../../style/Auth.css";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import content from '../../data/content.json';
 
 interface loginSchema {
   email: string;
@@ -26,25 +28,24 @@ type ChildProps = {
 
 export default function Signin({ onButtonClick }: ChildProps) {
   const navigate = useNavigate();
+
   const [userCred, setUserCred] = useState<loginSchema>({
     email: "",
     password: "",
   });
+  const [isError, setIsError] = useState<boolean>(false);
   const [showPassword, setShowPassword] = useState<boolean>(false);
 
   const handleSignIn = async () => {
-    console.log(userCred);
     try {
       const response = await axios.post(
         "http://localhost:4000/api/login",
         userCred
       );
-      if (response.data.message === "Authentication successful") {
-        console.log("response", response);
-        navigate("/main");
-      }
+
+      if (response.status === 200) navigate("/main");
     } catch (error) {
-      console.log("err");
+      setIsError(true);
     }
   };
 
@@ -58,10 +59,11 @@ export default function Signin({ onButtonClick }: ChildProps) {
 
   return (
     <div className="SignInComponent">
-      <h1>Sign In</h1>
+      <h1>{content.auth_label_signIn}</h1>
       <TextField
+        error={isError}
         variant="outlined"
-        label="Email"
+        label={content.auth_label_email}
         value={userCred.email}
         size="small"
         onChange={(e: ChangeEvent<HTMLInputElement>) =>
@@ -70,8 +72,9 @@ export default function Signin({ onButtonClick }: ChildProps) {
       />
 
       <FormControl size="small" variant="outlined">
-        <InputLabel>Password</InputLabel>
+        <InputLabel>{content.auth_label_password}</InputLabel>
         <OutlinedInput
+          error={isError}
           type={showPassword ? "text" : "password"}
           onChange={(e: ChangeEvent<HTMLInputElement>) =>
             setUserCred({ ...userCred, password: e.target.value })
@@ -91,7 +94,7 @@ export default function Signin({ onButtonClick }: ChildProps) {
       </FormControl>
 
       <Button onClick={handleSignIn} variant="contained">
-        Sign In
+        {content.auth_label_signIn}
       </Button>
       <HorizontalLineWithText text="or" />
       <Grid container spacing={2}>
@@ -102,7 +105,7 @@ export default function Signin({ onButtonClick }: ChildProps) {
             variant="contained"
             color="secondary"
           >
-            Google
+            {content.auth_label_google}
           </Button>
         </Grid>
         <Grid item xs={6}>
@@ -112,14 +115,16 @@ export default function Signin({ onButtonClick }: ChildProps) {
             variant="contained"
             color="secondary"
           >
-            Facebook
+           {content.auth_label_facebook} 
           </Button>
         </Grid>
       </Grid>
 
       <Button onClick={() => onButtonClick("signup")}>
-        Don't have an account? Sign Up
+        {content.auth_account_signup}
       </Button>
+
+      {isError && <Typography align="center" color="error">{content.auth_label_incorrect}</Typography>}
     </div>
   );
 }

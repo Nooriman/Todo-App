@@ -1,3 +1,15 @@
 {
-    "appName": "Organic Minds"
+    "appName": "Organic Minds",
+    "auth_intro": {
+        "title": "Productive Mind",
+        "body": "With only the feature you need, Organic Mind is customed for individual seeking a stress-free way to stay focused on their goals, projects, and tasks."
+    },
+    "getStarted": "Get Started",
+    "auth_account_signup": "Don't have an account? Sign Up",
+    "auth_label_signIn":"Sign In",
+    "auth_label_email": "Email",
+    "auth_label_password": "Password",
+    "auth_label_google": "Google",
+    "auth_label_facebook": "Facebook",
+    "auth_label_incorrect": "Invalid email or password. Please try again"
 }
