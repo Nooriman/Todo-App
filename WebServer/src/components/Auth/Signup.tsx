@@ -15,17 +15,18 @@ import { ChangeEvent, useState } from "react";
 import HorizontalLineWithText from "../HorizontalLineWithText/HorizontalLineWithText";
 import "../../style/Auth.css";
 import { useNavigate } from "react-router-dom";
+import content from '../../data/content.json';
 
 interface signupSchema {
   email: string;
   password: string;
 }
 
-type ChildProps = {
+type SignUpProps= {
   onButtonClick: (data: string) => void;
 };
 
-export default function Signup({ onButtonClick }: ChildProps) {
+export default function Signup({ onButtonClick }: SignUpProps) {
     const navigate = useNavigate();
   const [signUpCred, setSignUpCred] = useState<signupSchema>({
     email: "",
@@ -50,7 +51,9 @@ export default function Signup({ onButtonClick }: ChildProps) {
 
       if (response.status === 200) navigate('/main');
 
-    } catch (error) {}
+    } catch (error) {
+        console.log('error: ', error)
+    }
   };
 
   const handleGoogleLogin = () => {
@@ -63,18 +66,18 @@ export default function Signup({ onButtonClick }: ChildProps) {
 
   return (
     <div className="SignUpComponent">
-      <h1>Sign Up</h1>
+      <h1>{content.auth_label_signUp}</h1>
 
       <TextField
         variant="outlined"
-        label="Email"
+        label={content.auth_label_email}
         value={signUpCred.email}
         size="small"
         onChange={handleEmailOnChange}
       />
 
       <FormControl size="small" variant="outlined">
-        <InputLabel>Password</InputLabel>
+        <InputLabel>{content.auth_label_password}</InputLabel>
         <OutlinedInput
           type={showPassword ? "text" : "password"}
           onChange={(e: ChangeEvent<HTMLInputElement>) =>
@@ -96,7 +99,7 @@ export default function Signup({ onButtonClick }: ChildProps) {
       </FormControl>
 
       <FormControl size="small">
-        <InputLabel>Confirm Password</InputLabel>
+        <InputLabel>{content.auth_label_confirmPassword}</InputLabel>
         <OutlinedInput
           type={showPassword ? "text" : "password"}
           onChange={(e: ChangeEvent<HTMLInputElement>) =>
@@ -123,7 +126,7 @@ export default function Signup({ onButtonClick }: ChildProps) {
       </FormControl>
 
       <Button variant="contained" onClick={handleSignUp}>
-        Sign Up
+      {content.auth_label_signUp}
       </Button>
 
       <HorizontalLineWithText text="or" />
@@ -136,7 +139,7 @@ export default function Signup({ onButtonClick }: ChildProps) {
             color="secondary"
             disabled
           >
-            Google
+            {content.auth_label_google}
           </Button>
         </Grid>
         <Grid item xs={6}>
@@ -147,7 +150,7 @@ export default function Signup({ onButtonClick }: ChildProps) {
             color="secondary"
             disabled
           >
-            Facebook
+           {content.auth_label_facebook} 
           </Button>
         </Grid>
       </Grid>
@@ -159,12 +162,12 @@ export default function Signup({ onButtonClick }: ChildProps) {
         />
       </FormGroup> */}
       <Button color="primary" onClick={() => onButtonClick("signin")}>
-        Already have an account? Sign In
+        {content.auth_account_signin};
       </Button>
 
       {isUnmatchedPassword && (
         <Typography align="center" color="error">
-          Password does not match. Please re-type the password
+            {content.auth_label_unmatchPassword}
         </Typography>
       )}
     </div>

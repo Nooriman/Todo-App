@@ -6,10 +6,15 @@
     },
     "getStarted": "Get Started",
     "auth_account_signup": "Don't have an account? Sign Up",
+    "auth_account_signin": "Already have an account? Sign In",
     "auth_label_signIn":"Sign In",
-    "auth_label_email": "Email",
+    "auth_label_signUp":"Sign Up",
+    "auth_label_email": "Username",
     "auth_label_password": "Password",
+    "auth_label_confirmPassword":"Confirm Password",
     "auth_label_google": "Google",
     "auth_label_facebook": "Facebook",
-    "auth_label_incorrect": "Invalid email or password. Please try again"
+    "auth_label_incorrect": "Invalid email or password. Please try again",
+    "auth_label_unmatchPassword":"Password does not match. Please re-type the password"
 }
+          

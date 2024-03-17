@@ -69,7 +69,7 @@ export default function Auth() {
                 onClick={() => setShowSignIn(true)}
               >
                 {" "}
-                Already have an account? Sign In
+                {content.auth_account_signin}
               </Button>
             </div>
           )}
