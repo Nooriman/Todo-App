@@ -104,6 +104,7 @@ export default function Signin({ onButtonClick }: ChildProps) {
             sx={{ width: "100%" }}
             variant="contained"
             color="secondary"
+            disabled
           >
             {content.auth_label_google}
           </Button>
@@ -114,6 +115,7 @@ export default function Signin({ onButtonClick }: ChildProps) {
             sx={{ width: "100%" }}
             variant="contained"
             color="secondary"
+            disabled
           >
            {content.auth_label_facebook} 
           </Button>
