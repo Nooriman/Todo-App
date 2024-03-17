@@ -11,11 +11,11 @@ import {
   Typography,
 } from "@mui/material";
 import { ChangeEvent, useState } from "react";
-import HorizontalLineWithText from "../HorizontalLineWithText/HorizontalLineWithText";
-import "../../style/Auth.css";
+import HorizontalLineWithText from "../../../components/HorizontalLineWithText/HorizontalLineWithText";
+import "../style/Auth.css";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import content from '../../data/content.json';
+import content from '../../../data/content.json';
 
 interface loginSchema {
   email: string;

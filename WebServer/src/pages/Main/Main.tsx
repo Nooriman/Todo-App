@@ -1,11 +1,11 @@
 import { Button, IconButton, Typography } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import { useEffect, useState } from "react";
-import LeftDrawer from "../components/Main/LeftDrawer";
+import LeftDrawer from "./component/LeftDrawer";
 import axios from 'axios'
-import "../style/Main.css";
-import RightDrawer from "../components/Main/RightDrawer";
+import RightDrawer from "./component/RightDrawer";
 import { Add } from "@mui/icons-material";
+import "./style/Main.css";
 
 interface TodoTypes {
   title: string;

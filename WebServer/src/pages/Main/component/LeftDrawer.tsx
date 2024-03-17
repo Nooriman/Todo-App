@@ -17,7 +17,7 @@ import {
   Chip,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
-import "../../style/LeftDrawer.css";
+import "../style/LeftDrawer.css";
 import { useState } from "react";
 import SearchIcon from "@mui/icons-material/Search";
 import DoubleArrowIcon from "@mui/icons-material/DoubleArrow";

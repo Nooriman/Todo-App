@@ -12,10 +12,10 @@ import {
 } from "@mui/material";
 import axios from "axios";
 import { ChangeEvent, useState } from "react";
-import HorizontalLineWithText from "../HorizontalLineWithText/HorizontalLineWithText";
-import "../../style/Auth.css";
+import HorizontalLineWithText from "../../../components/HorizontalLineWithText/HorizontalLineWithText";
+import "../style/Auth.css";
 import { useNavigate } from "react-router-dom";
-import content from '../../data/content.json';
+import content from '../../../data/content.json';
 
 interface signupSchema {
   email: string;

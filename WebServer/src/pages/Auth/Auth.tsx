@@ -1,12 +1,12 @@
 import { Grid, Button } from "@mui/material";
-import bgOne from "../assets/abstract-shape.png";
+import bgOne from "../../assets/abstract-shape.png";
 import { useState } from "react";
-import CarouselItem from "../components/Auth/Carousel";
+import CarouselItem from "./component/Carousel";
 
-import Signin from "../components/Auth/Signin";
-import Signup from "../components/Auth/Signup";
+import Signin from "./component/Signin";
+import Signup from "./component/Signup";
 
-import content from "../data/content.json";
+import content from "../../data/content.json";
 
 export default function Auth() {
   const [showSignIn, setShowSignIn] = useState<boolean>(false);
