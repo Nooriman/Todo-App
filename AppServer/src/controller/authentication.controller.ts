@@ -2,7 +2,7 @@ import { Request, Response } from "express";
 import AuthenticationModel, {
   AuthenticationSchema,
 } from "../model/authentication.model";
-import ResponseMessage from '../Constants.json';
+import ResponseMessage from "../Constants.json";
 
 export const postLogin = async (req: Request, res: Response) => {
   const email = req.body.email;
@@ -20,8 +20,16 @@ export const postLogin = async (req: Request, res: Response) => {
 };
 
 export const postSignup = async (req: Request, res: Response) => {
+  const email = req.body.email;
+  const password = req.body.password;
   try {
-    console.log("postSignup");
+    const details = await new AuthenticationModel({
+      email: email,
+      password: password,
+      role: 2,
+    });
+
+    details.save().then(() => res.json({ message: "Signup successful" }));
   } catch (err: any) {
     res.status(500).json({ message: err.message });
   }
