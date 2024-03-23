@@ -1,4 +1,10 @@
 {
     "login_success": "Authentication successful",
-    "login_failure": "Invalid email or password. Please try again."
+    "login_failure": "Invalid email or password. Please try again.",
+    "error_Internal": "Internal Server Error",
+    "error_TodoNotFound": "Todo Not Found",
+    "success_create": "Item successfully created",
+    "success_updated": "Item successfully updated",
+    "success_delete": "Item successfully deleted",
+    "success_complete": "Item successfully marked as completed"
 }
