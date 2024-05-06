@@ -8,14 +8,11 @@ interface RightDrawerProps {
 
 export default function RightDrawer({ open, onClose }: RightDrawerProps) {
   return (
-    <Drawer anchor="right" open={open} variant="persistent">
+    <Drawer anchor="right" open={open} variant="persistent" className="right-drawer__main">
       <div
         style={{
-          width: "400px",
-          padding: "20px",
-          backgroundColor: "#f5f5f5",
-          height: "100%",
           display: 'flex',
+          height: '100%',
           flexDirection: 'column'
         }}
       >

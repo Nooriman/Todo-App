@@ -1,0 +1,62 @@
+.main__Container {
+  height: 100vh;
+  display: flex;
+}
+
+.left-drawer__main {
+  .MuiPaper-root {
+    background-color: #f4f4f4 !important;
+    position: relative;
+    padding: 20px 30px;
+    height: calc(100% - 40px);
+    }
+}
+
+.right-drawer__main{
+  width: 30%;
+  .MuiPaper-root {
+    background-color: #f4f4f4 !important;
+    position: relative;
+    padding: 20px 30px;
+    height: calc(100% - 40px)
+  }
+}
+
+.isDrawerOpen {
+  margin-left: 18%;
+  transition: margin-left 0.3s ease;
+}
+
+.main__body {
+  display: flex;
+  flex-direction: column;
+  width: calc(100% - 40px);
+  padding: 20px;
+  background-color: lightblue;
+}
+
+.main__top {
+  display: flex;
+  align-items: start;
+}
+
+.main__title {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 50px;
+}
+
+.today-date {
+  border: solid 1px #e9e9e9;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 2.5rem;
+  line-height: 2.5rem;
+}
+
+.add-task {
+    justify-content: left !important;
+    padding: 15px 20px !important;
+    color: #525252 !important;
+}

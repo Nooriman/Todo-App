@@ -17,8 +17,8 @@ import {
   Chip,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
-import "../style/LeftDrawer.css";
 import { useState } from "react";
+import "../Main.css";
 import SearchIcon from "@mui/icons-material/Search";
 import DoubleArrowIcon from "@mui/icons-material/DoubleArrow";
 import {
@@ -87,14 +87,13 @@ export default function LeftDrawer({ open, onClose }: LeftDrawerProps) {
     },
   ];
 
+  // --  main
   return (
     <Drawer
       anchor="left"
       open={open}
       variant="persistent"
-      classes={{
-        paper: "custom-drawer-paper",
-      }}
+      className="left-drawer__main"
     >
       <div
         style={{

@@ -68,7 +68,6 @@ export default function Auth() {
                 style={{ width: "100% ", color: "darkgrey" }}
                 onClick={() => setShowSignIn(true)}
               >
-                {" "}
                 {content.auth_account_signin}
               </Button>
             </div>
