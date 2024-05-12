@@ -56,16 +56,12 @@ Once both frontend and backend servers are running, you can access the Todo App 
 - Delete Tasks: Remove tasks from your to-do list when they are no longer needed.
 - Edit Tasks: Update the details of existing tasks.
 
-## Technologies Used
+### Technologies Used
 - ReactJS
 - Node.js
 - Express.js
 - MongoDB
 - Axios
 
-## Contributing
+### Contributing
 Contributions are welcome! If you find any issues or have suggestions for improvements, feel free to open an issue or create a pull request.
-
-## License
-This project is licensed under the MIT License - see the LICENSE file for details.
-
