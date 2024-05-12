@@ -1,4 +1,4 @@
-# Todo App Portfolio Project
+ # Todo App Portfolio Project
 
 Welcome to my Todo App portfolio project! This application is built using ReactJS for the frontend, Node.js with Express.js for the backend, and MongoDB as the database. Axios is used for making HTTP requests between the frontend and backend.
 
@@ -13,21 +13,23 @@ Before running the application, ensure you have the following installed on your 
 - MongoDB: Download and Install MongoDB
 
 ### Installation
-Clone the repository to your local machine:
-
-
+1. Clone the repository to your local machine:
 ```
 git clone <repository_url>
 ```
-Navigate to the project directory:
-cd todo-app
-Install dependencies for both frontend and backend:
 
+2. Navigate to the project directory:
+```
+cd todo-app
+```
+
+3. Install dependencies for both frontend and backend:
+```
 npm install
 cd client
 npm install
 cd ..
-
+```
 
 Running the Application
 Frontend
