@@ -14,40 +14,36 @@ MongoDB: Download and Install MongoDB
 Installation
 Clone the repository to your local machine:
 
-bash
-Copy code
+
 git clone <repository_url>
 Navigate to the project directory:
 
-bash
-Copy code
 cd todo-app
 Install dependencies for both frontend and backend:
 
-bash
-Copy code
 npm install
 cd client
 npm install
 cd ..
+
+
 Running the Application
 Frontend
 
 To start the frontend server, run:
 
-bash
-Copy code
 npm start
 The frontend server will run on http://localhost:3000.
+
 
 Backend
 
 To start the backend server in development mode, run:
 
-bash
-Copy code
 npm run dev
 The backend server will run on http://localhost:5000.
+
+
 
 Usage
 Once both frontend and backend servers are running, you can access the Todo App by navigating to http://localhost:3000 in your web browser.
