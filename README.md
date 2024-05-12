@@ -15,9 +15,10 @@ Installation
 Clone the repository to your local machine:
 
 
+```
 git clone <repository_url>
+```
 Navigate to the project directory:
-
 cd todo-app
 Install dependencies for both frontend and backend:
 
