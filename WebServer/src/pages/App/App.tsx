@@ -2,8 +2,8 @@ import "./App.css";
 import { lazy, Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
 
-const Auth = lazy(() => import("./pages/Auth/Auth"));
-const Main = lazy(() => import("./pages/Main/Main"));
+const Auth = lazy(() => import("../Auth/Auth"));
+const Main = lazy(() => import("../Main/Main"));
 
 export default function App() {
   return (

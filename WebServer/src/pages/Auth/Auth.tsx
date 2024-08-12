@@ -1,5 +1,5 @@
 import { Grid, Button } from "@mui/material";
-import bgOne from "../../assets/abstract-shape.png";
+import bgOne from "../../assets/auth_image.png";
 import { useState } from "react";
 import CarouselItem from "./component/Carousel";
 
